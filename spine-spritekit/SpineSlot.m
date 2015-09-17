@@ -15,7 +15,7 @@
     id result = [[[self class] alloc] init];
     [result setName:@(slot->data->name)];
     [result setBone:[SpineBone boneWithCBone:slot->bone]];
-    if ( slot->attachment && slot->attachment->type == ATTACHMENT_REGION) {
+    if ( slot->attachment && slot->attachment->type == SP_ATTACHMENT_REGION) {
         [result setAttachment:[SpineAttachment attachmentWithCAttachment:slot->attachment]];
     } else if ( slot->attachment ) {
         NSLog(@"Unsupported attachment type:%d for slot:%@", slot->attachment->type, [result name]);

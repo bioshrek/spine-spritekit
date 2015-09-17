@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SpineTimeline : NSObject <NSCopying>
 @property (nonatomic, copy, readonly) NSArray *types;

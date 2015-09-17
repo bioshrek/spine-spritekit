@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 DZPub.com. All rights reserved.
 //
 
+#include <CoreGraphics/CGGeometry.h>
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef enum {
     SpineSequenceCurveLinear,

@@ -174,7 +174,7 @@ static void _spine_adapt_disposeTexture( void * rendobj );
     SKTexture *texture = nil;
     *protated = NO;
     
-    if ( attachment && attachment->name && attachment->type == ATTACHMENT_REGION) {
+    if ( attachment && attachment->name && attachment->type == SP_ATTACHMENT_REGION) {
         // Try override
         if ( attachment->name ) {
             NSDictionary *override = mapOverride[@(attachment->name)];
@@ -239,14 +239,14 @@ static void _spine_adapt_disposeTexture( void * rendobj );
     
     // Sprites: Slot->Attachment
     [maps.mapSlotToNode removeAllObjects];
-    for( int i = 0; i < skeleton.spineContext->skeleton->slotCount; i++ ) {
+    for( int i = 0; i < skeleton.spineContext->skeleton->slotsCount; i++ ) {
         spSlot *slot = skeleton.spineContext->skeleton->drawOrder[i];
         SKNode *node;
         SKSpriteNode *sprite;
         const char *boneName = slot->bone->data->name;
         if ( boneName ) {
             node = maps.mapBoneToNode[@(boneName)];
-            if ( slot->attachment && slot->attachment->type == ATTACHMENT_REGION ) {
+            if ( slot->attachment && slot->attachment->type == SP_ATTACHMENT_REGION ) {
                 BOOL rotated = NO;
                 SKTexture *texture = [self textureForAttachment:slot->attachment rotated:&rotated map:maps.mapOverrideAttachmentToTexture];
                 sprite = [SKSpriteNode spriteNodeWithTexture:texture];

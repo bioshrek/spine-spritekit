@@ -54,7 +54,7 @@
     [result setName:@(animation->name)];
     [result setDuration:animation->duration];
     
-    NSLog(@"animation:%@ duration:%2.2f timelineCount:%d", [result name], animation->duration, animation->timelineCount);
+    NSLog(@"animation:%@ duration:%2.2f timelineCount:%d", [result name], animation->duration, animation->timelinesCount);
     return result;
 }
 

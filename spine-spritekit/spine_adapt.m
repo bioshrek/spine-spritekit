@@ -29,7 +29,7 @@ int spine_load_test(char *skeletonname, char *atlasname, float scale, char *anim
 int spine_load(struct spinecontext *ctx, const char *skeletonname, const char *atlasname, float scale, const char *animationName)
 {
     int result = -1;
-    spAtlas *atlas = spAtlas_readAtlasFile(atlasname);
+    spAtlas *atlas = spAtlas_createFromFile(atlasname, 0);
     if ( atlas ) {
         printf("First region name: %s, x: %d, y: %d\n", atlas->regions->name, atlas->regions->x, atlas->regions->y);
         printf("First page name: %s, size: %d, %d\n", atlas->pages->name, atlas->pages->width, atlas->pages->height);
@@ -46,7 +46,7 @@ int spine_load(struct spinecontext *ctx, const char *skeletonname, const char *a
         printf("Default skin name: %s\n", skeletonData->defaultSkin->name);
         
         spSkeleton* skeleton = spSkeleton_create(skeletonData);
-        if ( animationName == 0 && skeletonData->animationCount > 0) {
+        if ( animationName == 0 && skeletonData->animationsCount > 0) {
             animationName = skeletonData->animations[0]->name;
             printf("spine: Selecting the first animation as a default:%s\n", animationName);
         }
@@ -54,7 +54,7 @@ int spine_load(struct spinecontext *ctx, const char *skeletonname, const char *a
         // animation
         spAnimation* animation = spSkeletonData_findAnimation(skeletonData, animationName);
         if (animation) {
-            printf("Animation timelineCount: %d\n", animation->timelineCount);
+            printf("Animation timelineCount: %d\n", animation->timelinesCount);
             printf("Animation duration: %2.2f\n", animation->duration);
         } else {
             printf("animation not found witt name:%s\n", animationName);
@@ -90,7 +90,7 @@ int spine_dump_animation(struct spinecontext *ctx, const char *animationName)
     spSkeleton *skeleton = ctx->skeleton;
     spAtlas *atlas = ctx->atlas;
     
-    if ( animationName == 0 && ctx->skeletonData->animationCount > 0) {
+    if ( animationName == 0 && ctx->skeletonData->animationsCount > 0) {
         animationName = ctx->skeletonData->animations[0]->name;
         printf("spine: Selecting the first animation as a default:%s\n", animationName);
     }
@@ -112,13 +112,12 @@ int spine_dump_animation(struct spinecontext *ctx, const char *animationName)
         spAnimationState_apply(state, skeleton);
         spSkeleton_updateWorldTransform(skeleton);
         
-        for (int i = 0, n = skeleton->slotCount; i < n; i++) {
+        for (int i = 0, n = skeleton->slotsCount; i < n; i++) {
             spSlot* slot = skeleton->drawOrder[i];
-            if (!slot->attachment || slot->attachment->type != ATTACHMENT_REGION) continue;
+            if (!slot->attachment || slot->attachment->type != SP_ATTACHMENT_REGION) continue;
             spRegionAttachment* attachment = (spRegionAttachment*)slot->attachment;
             float vertices[8];
-            spRegionAttachment_computeWorldVertices(attachment, slot->skeleton->x, slot->skeleton->y, slot->bone, vertices);
-            // 	float x, y, scaleX, scaleY, rotation, width, height;
+            spRegionAttachment_computeWorldVertices(attachment, slot->bone, vertices);            // 	float x, y, scaleX, scaleY, rotation, width, height;
             printf("%s:\n -attachment (%2.2f, %2.2f, %2.2f, %2.2f) scale: (%2.2f, %2.2f) rotation:%2.2f\n",
                    attachment->super.name,
                    attachment->x, attachment->y, attachment->width, attachment->height,
@@ -131,14 +130,14 @@ int spine_dump_animation(struct spinecontext *ctx, const char *animationName)
             printf("- vertices: (%2.1f, %2.1f), (%2.1f, %2.1f), (%2.1f, %2.1f), (%2.1f, %2.1f)\n" \
                    "- uvs:(%2.2f, %2.2f), (%2.2f, %2.2f), (%2.2f, %2.2f), (%2.2f, %2.2f)\n" \
                    "- offset:(%2.2f, %2.2f), (%2.2f, %2.2f), (%2.2f, %2.2f), (%2.2f, %2.2f)\n",
-                   vertices[VERTEX_X1], vertices[VERTEX_Y1],vertices[VERTEX_X2], vertices[VERTEX_Y2],
-                   vertices[VERTEX_X3], vertices[VERTEX_Y3], vertices[VERTEX_X4],vertices[VERTEX_Y4],
-                   attachment->uvs[VERTEX_X1], attachment->uvs[VERTEX_Y1], attachment->uvs[VERTEX_X2], attachment->uvs[VERTEX_Y2],
-                   attachment->uvs[VERTEX_X3], attachment->uvs[VERTEX_Y3], attachment->uvs[VERTEX_X4],attachment->uvs[VERTEX_Y4],
-                   attachment->offset[VERTEX_X1], attachment->offset[VERTEX_Y1],
-                   attachment->offset[VERTEX_X2], attachment->offset[VERTEX_Y2],
-                   attachment->offset[VERTEX_X3], attachment->offset[VERTEX_Y3],
-                   attachment->offset[VERTEX_X4],attachment->offset[VERTEX_Y4]
+                   vertices[SP_VERTEX_X1], vertices[SP_VERTEX_Y1],vertices[SP_VERTEX_X2], vertices[SP_VERTEX_Y2],
+                   vertices[SP_VERTEX_X3], vertices[SP_VERTEX_Y3], vertices[SP_VERTEX_X4],vertices[SP_VERTEX_Y4],
+                   attachment->uvs[SP_VERTEX_X1], attachment->uvs[SP_VERTEX_Y1], attachment->uvs[SP_VERTEX_X2], attachment->uvs[SP_VERTEX_Y2],
+                   attachment->uvs[SP_VERTEX_X3], attachment->uvs[SP_VERTEX_Y3], attachment->uvs[SP_VERTEX_X4],attachment->uvs[SP_VERTEX_Y4],
+                   attachment->offset[SP_VERTEX_X1], attachment->offset[SP_VERTEX_Y1],
+                   attachment->offset[SP_VERTEX_X2], attachment->offset[SP_VERTEX_Y2],
+                   attachment->offset[SP_VERTEX_X3], attachment->offset[SP_VERTEX_Y3],
+                   attachment->offset[SP_VERTEX_X4],attachment->offset[SP_VERTEX_Y4]
                    );
             spine_logUVS(attachment->uvs, atlas->pages->width, atlas->pages->height);
             
@@ -196,13 +195,13 @@ void spine_set_handler_disposetexture(spine_adapt_disposetexture_t handler)
 CGRect spine_uvs2rect(float *uvs, BOOL *protated)
 {
     CGRect region;
-    if ( (uvs[VERTEX_X3] - uvs[VERTEX_X2]) == 0 ) {
-        region.origin = CGPointMake(uvs[VERTEX_X2], uvs[VERTEX_Y2]);    // bottom-left
-        region.size = CGSizeMake((uvs[VERTEX_X4] - uvs[VERTEX_X3]),(uvs[VERTEX_Y1] - uvs[VERTEX_Y4]));
+    if ( (uvs[SP_VERTEX_X3] - uvs[SP_VERTEX_X2]) == 0 ) {
+        region.origin = CGPointMake(uvs[SP_VERTEX_X2], uvs[SP_VERTEX_Y2]);    // bottom-left
+        region.size = CGSizeMake((uvs[SP_VERTEX_X4] - uvs[SP_VERTEX_X3]),(uvs[SP_VERTEX_Y1] - uvs[SP_VERTEX_Y4]));
         *protated = YES;
     } else {
-        region.origin = CGPointMake(uvs[VERTEX_X1], uvs[VERTEX_Y1]);    // bottom-left
-        region.size = CGSizeMake((uvs[VERTEX_X3] - uvs[VERTEX_X2]),(uvs[VERTEX_Y1] - uvs[VERTEX_Y2]));
+        region.origin = CGPointMake(uvs[SP_VERTEX_X1], uvs[SP_VERTEX_Y1]);    // bottom-left
+        region.size = CGSizeMake((uvs[SP_VERTEX_X3] - uvs[SP_VERTEX_X2]),(uvs[SP_VERTEX_Y1] - uvs[SP_VERTEX_Y2]));
         *protated = NO;
     }
     return region;

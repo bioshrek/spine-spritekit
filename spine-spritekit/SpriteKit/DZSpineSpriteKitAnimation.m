@@ -71,7 +71,7 @@
     SKTexture *texture = nil;
     *protated = NO;
     
-    if ( attachment && attachment->name && attachment->type == ATTACHMENT_REGION) {
+    if ( attachment && attachment->name && attachment->type == SP_ATTACHMENT_REGION) {
         // Try override
         if ( attachment->name ) {
             NSDictionary *override = self.maps.mapOverrideAttachmentToTexture[@(attachment->name)];
@@ -117,7 +117,7 @@
     } else if ( cslot ) {
         attachment = cslot->attachment;
     }
-    if ( attachment && attachment->type != ATTACHMENT_REGION) {
+    if ( attachment && attachment->type != SP_ATTACHMENT_REGION) {
         attachment = 0;
     }
     
