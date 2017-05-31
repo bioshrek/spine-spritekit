@@ -14,6 +14,9 @@
 		11162A681EDE77F100F592C7 /* NSDictionary+F.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A611EDE77F100F592C7 /* NSDictionary+F.m */; };
 		11162A691EDE77F100F592C7 /* NSNumber+F.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A631EDE77F100F592C7 /* NSNumber+F.m */; };
 		11162A6A1EDE77F100F592C7 /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = 11162A641EDE77F100F592C7 /* README.markdown */; };
+		11162A6D1EDECE4100F592C7 /* DZSpineBoneAnimationActionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A6C1EDECE4100F592C7 /* DZSpineBoneAnimationActionTransformer.m */; };
+		11162A701EDED36B00F592C7 /* DZSpineSlotAnimationActionTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A6F1EDED36B00F592C7 /* DZSpineSlotAnimationActionTransformer.m */; };
+		11162A731EDED5CF00F592C7 /* DZSpineAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A721EDED5CF00F592C7 /* DZSpineAnimationManager.m */; };
 		1164071F1ED92E9F00245747 /* SpineRegionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164071E1ED92E9F00245747 /* SpineRegionAttachment.m */; };
 		116407221ED9339C00245747 /* DZSpineAttachmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 116407211ED9339C00245747 /* DZSpineAttachmentManager.m */; };
 		F42C15181814058500A61F6A /* DZSpineSpriteKitAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C15171814058500A61F6A /* DZSpineSpriteKitAnimation.m */; };
@@ -104,6 +107,12 @@
 		11162A621EDE77F100F592C7 /* NSNumber+F.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+F.h"; sourceTree = "<group>"; };
 		11162A631EDE77F100F592C7 /* NSNumber+F.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+F.m"; sourceTree = "<group>"; };
 		11162A641EDE77F100F592C7 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		11162A6B1EDECE4100F592C7 /* DZSpineBoneAnimationActionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineBoneAnimationActionTransformer.h; sourceTree = "<group>"; };
+		11162A6C1EDECE4100F592C7 /* DZSpineBoneAnimationActionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpineBoneAnimationActionTransformer.m; sourceTree = "<group>"; };
+		11162A6E1EDED36B00F592C7 /* DZSpineSlotAnimationActionTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineSlotAnimationActionTransformer.h; sourceTree = "<group>"; };
+		11162A6F1EDED36B00F592C7 /* DZSpineSlotAnimationActionTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpineSlotAnimationActionTransformer.m; sourceTree = "<group>"; };
+		11162A711EDED5CF00F592C7 /* DZSpineAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineAnimationManager.h; sourceTree = "<group>"; };
+		11162A721EDED5CF00F592C7 /* DZSpineAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpineAnimationManager.m; sourceTree = "<group>"; };
 		1164071D1ED92E9F00245747 /* SpineRegionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineRegionAttachment.h; sourceTree = "<group>"; };
 		1164071E1ED92E9F00245747 /* SpineRegionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpineRegionAttachment.m; sourceTree = "<group>"; };
 		116407201ED9339C00245747 /* DZSpineAttachmentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineAttachmentManager.h; sourceTree = "<group>"; };
@@ -401,6 +410,12 @@
 				116407211ED9339C00245747 /* DZSpineAttachmentManager.m */,
 				11162A481EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.h */,
 				11162A491EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m */,
+				11162A6B1EDECE4100F592C7 /* DZSpineBoneAnimationActionTransformer.h */,
+				11162A6C1EDECE4100F592C7 /* DZSpineBoneAnimationActionTransformer.m */,
+				11162A6E1EDED36B00F592C7 /* DZSpineSlotAnimationActionTransformer.h */,
+				11162A6F1EDED36B00F592C7 /* DZSpineSlotAnimationActionTransformer.m */,
+				11162A711EDED5CF00F592C7 /* DZSpineAnimationManager.h */,
+				11162A721EDED5CF00F592C7 /* DZSpineAnimationManager.m */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -618,6 +633,7 @@
 				11162A681EDE77F100F592C7 /* NSDictionary+F.m in Sources */,
 				F4F8DCD51808176700F2C744 /* BoneData.c in Sources */,
 				F4F8DC791808175500F2C744 /* SpineSlot.m in Sources */,
+				11162A701EDED36B00F592C7 /* DZSpineSlotAnimationActionTransformer.m in Sources */,
 				F4F8DC781808175500F2C744 /* SpineSkeleton.m in Sources */,
 				F4F8DCD31808176700F2C744 /* AttachmentLoader.c in Sources */,
 				F4F8DC701808175500F2C744 /* DZSpineLoader.m in Sources */,
@@ -625,6 +641,7 @@
 				F4957457180BFB8B00EA94E0 /* DZSpineSceneDescription.m in Sources */,
 				F4F8DC7A1808175500F2C744 /* SpineTimeline.m in Sources */,
 				F42C151B1814059100A61F6A /* DZSpineSpriteKitMaps.m in Sources */,
+				11162A731EDED5CF00F592C7 /* DZSpineAnimationManager.m in Sources */,
 				11162A4A1EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m in Sources */,
 				F4F8DC751808175500F2C744 /* SpineBone.m in Sources */,
 				F4957456180BFB8B00EA94E0 /* DZSpineSceneBuilder.m in Sources */,
@@ -635,6 +652,7 @@
 				F4F8DCD81808176700F2C744 /* EventData.c in Sources */,
 				F4F8DA8018080E1200F2C744 /* DZAppDelegate.m in Sources */,
 				F4F8DCDB1808176700F2C744 /* RegionAttachment.c in Sources */,
+				11162A6D1EDECE4100F592C7 /* DZSpineBoneAnimationActionTransformer.m in Sources */,
 				F4F8DC761808175500F2C744 /* SpineGeometry.m in Sources */,
 				F4F8DCD11808176700F2C744 /* AtlasAttachmentLoader.c in Sources */,
 				11162A671EDE77F100F592C7 /* NSArray+F.m in Sources */,

@@ -47,4 +47,6 @@ typedef void (^DZSpineSceneContentFinishLoadingBlock)(DZSpineScene *scene);
 
 - (void)setAttachment:(NSString *)attachmentName forSlot:(NSString *)slotName;
 
+- (void)playAnimationWithName:(NSString *)animationName repeat:(BOOL)repeat;
+
 @end

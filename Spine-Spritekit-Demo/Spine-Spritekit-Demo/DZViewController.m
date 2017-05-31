@@ -39,6 +39,8 @@
 	scene.touchEndedBlock = ^(DZSpineScene *scene, NSSet<UITouch *> *touches, UIEvent *event) {
 		// replace attachments
 		[scene setAttachment:@"eyes" forSlot:@"eyes"];
+		
+		[scene playAnimationWithName:@"jump" repeat:NO];
 	};
 	
     return scene;

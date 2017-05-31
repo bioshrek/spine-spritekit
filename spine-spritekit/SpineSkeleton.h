@@ -34,4 +34,6 @@
 
 - (SpineRegionAttachment *)findAttachmentWithName:(NSString *)attachmentName inSlotName:(NSString *)slotName;
 
+- (NSArray<NSString *> *)allAnimationNames;
+
 @end

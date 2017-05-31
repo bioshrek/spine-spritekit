@@ -98,6 +98,11 @@
     return _animationMap;
 }
 
+- (NSArray<NSString *> *)allAnimationNames
+{
+	return [self.animationMap allKeys];
+}
+
 #pragma mark - API
 - (void) addSlot:(SpineSlot *) slot
 {

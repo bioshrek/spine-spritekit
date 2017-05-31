@@ -12,12 +12,14 @@
 #import "DZSpineSceneBuilder.h"
 #import "DZSpineAttachmentManager.h"
 #import "NSArray+F.h"
+#import "DZSpineAnimationManager.h"
 
 @interface DZSpineScene()
 @property (nonatomic) BOOL contentCreated;
 @property (nonatomic, strong) DZSpineSceneBuilder *builder;
 @property (nonatomic, strong) DZSpineAttachmentManager *attachmentManager;  // 管理后期要替换的attachment
 @property (nonatomic, strong) NSArray<DZSpinePreloadAttachmentMetaInfo *> *preloadAttachmentInfo;
+@property (nonatomic, strong) DZSpineAnimationManager *animationManager;
 
 @property (nonatomic, strong) NSString *skeletonName;
 @property (nonatomic, strong) NSString *animationName;
@@ -118,6 +120,7 @@
         if ( skeleton ) {
             [self.rootNode addChild:[self.builder nodeWithSkeleton:skeleton animationName:self.animationName loop:YES]];
 			[self loadAttachmentsFromSkeleton:skeleton];
+			[self createAnimationManagerWithSkeleton:skeleton];
         }
     }
 }
@@ -137,6 +140,12 @@
 	}];
 }
 
+- (void)createAnimationManagerWithSkeleton:(SpineSkeleton *)skeleton
+{
+	self.animationManager = [[DZSpineAnimationManager alloc] initWithSkeleton:skeleton
+																	  builder:self.builder];
+}
+
 - (void)setAttachment:(NSString *)attachmentName forSlot:(NSString *)slotName
 {
 	SpineRegionAttachment *attachment = [self.attachmentManager attachmentForName:attachmentName slotName:slotName];
@@ -150,6 +159,11 @@
 	}
 	
 	[attachment applyToSpriteNode:node];
+}
+
+- (void)playAnimationWithName:(NSString *)animationName repeat:(BOOL)repeat
+{
+	[self.animationManager playAnimation:animationName repeat:repeat];
 }
 
 - (void) didEvaluateActions
