@@ -30,9 +30,15 @@
     scene.rootNode.position = CGPointMake(size.width /2, size.height /3);
     scene.scaleMode = SKSceneScaleModeAspectFill;
 	
+	// 骨骼初始化，指定slot中的attachment
+	scene.contentFinishLoadingBlock = ^(DZSpineScene *scene) {
+		[scene setAttachment:@"eyes-closed" forSlot:@"eyes"];
+	};
+	
+	// 骨骼运动中，改变slot中的attachment
 	scene.touchEndedBlock = ^(DZSpineScene *scene, NSSet<UITouch *> *touches, UIEvent *event) {
 		// replace attachments
-		[scene setAttachment:@"eyes-closed" forSlot:@"eyes"];
+		[scene setAttachment:@"eyes" forSlot:@"eyes"];
 	};
 	
     return scene;

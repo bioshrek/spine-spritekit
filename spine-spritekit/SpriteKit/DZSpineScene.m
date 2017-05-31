@@ -96,7 +96,15 @@
     if( !self.contentCreated) {
         [self createSceneContents];
         self.contentCreated = YES;
+		[self notifyContentFinishLoading];
     }
+}
+
+- (void)notifyContentFinishLoading
+{
+	if (self.contentFinishLoadingBlock) {
+		self.contentFinishLoadingBlock(self);
+	}
 }
 
 - (void)createSceneContents

@@ -11,6 +11,7 @@
 
 @class DZSpineScene;
 typedef void (^DZSpineSceneTouchBlock)(DZSpineScene *scene, NSSet<UITouch *> * touches, UIEvent *event);
+typedef void (^DZSpineSceneContentFinishLoadingBlock)(DZSpineScene *scene);
 
 @interface DZSpineScene : SKScene
 @property (nonatomic, readonly) SKNode *rootNode;
@@ -19,6 +20,8 @@ typedef void (^DZSpineSceneTouchBlock)(DZSpineScene *scene, NSSet<UITouch *> * t
 @property (nonatomic, copy) DZSpineSceneTouchBlock touchMovedBlock;
 @property (nonatomic, copy) DZSpineSceneTouchBlock touchEndedBlock;
 @property (nonatomic, copy) DZSpineSceneTouchBlock touchCancelledBlock;
+
+@property (nonatomic, copy) DZSpineSceneContentFinishLoadingBlock contentFinishLoadingBlock;
 
 - (id) initWithSize:(CGSize)size;
 - (id) initWithSize:(CGSize)size
