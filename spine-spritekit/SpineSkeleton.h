@@ -10,6 +10,8 @@
 #import "SpineBone.h"
 #import "SpineSlot.h"
 #import "SpineAnimation.h"
+#import "SpineRegionAttachment.h"
+
 
 @interface SpineSkeleton : NSObject
 @property (nonatomic, strong) NSString *name;
@@ -29,5 +31,7 @@
 - (SpineAnimation *) animationWithName:(NSString *) name;
 
 + (id) skeletonWithName:(NSString *) name atlasName:(NSString *) atlasName scale:(CGFloat) scale;
+
+- (SpineRegionAttachment *)findAttachmentWithName:(NSString *)attachmentName inSlotName:(NSString *)slotName;
 
 @end

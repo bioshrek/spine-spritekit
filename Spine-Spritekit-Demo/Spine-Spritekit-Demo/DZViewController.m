@@ -15,15 +15,26 @@
 
 + (SKScene *) buildSpineboyWithSize:(CGSize) size
 {
+	NSArray *preloadInfo = @[
+							 [DZSpinePreloadAttachmentMetaInfo metaInfoWithSlotName:@"eyes" attachmentName:@"eyes"],
+							 [DZSpinePreloadAttachmentMetaInfo metaInfoWithSlotName:@"eyes" attachmentName:@"eyes-closed"],
+							 ];
+	
     // 1. Simple Example: An Animation for a Skeleton
     DZSpineScene * scene = [[DZSpineScene alloc] initWithSize:size
                                                  skeletonName:@"spineboy"
                                                 animationName:@"walk"
-                                                        scale:1];
+                                                        scale:1
+										preloadAttachmentInfo:preloadInfo];
     // adjust root position
     scene.rootNode.position = CGPointMake(size.width /2, size.height /3);
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    
+	
+	scene.touchEndedBlock = ^(DZSpineScene *scene, NSSet<UITouch *> *touches, UIEvent *event) {
+		// replace attachments
+		[scene setAttachment:@"eyes-closed" forSlot:@"eyes"];
+	};
+	
     return scene;
 }
 
@@ -216,7 +227,7 @@
     switch (sender.selectedSegmentIndex) {
         case 0:
         {
-            SKScene *scene = [[self class] buildSpineboyLoopWithSize:skView.bounds.size];
+            SKScene *scene = [[self class] buildSpineboyWithSize:skView.bounds.size];
             
             // Present the scene.
             [skView presentScene:scene];

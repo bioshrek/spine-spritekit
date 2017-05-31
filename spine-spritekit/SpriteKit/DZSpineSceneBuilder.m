@@ -327,6 +327,10 @@ static void _spine_adapt_disposeTexture( void * rendobj );
     }
 }
 
+- (SKSpriteNode *)findNodeBySlotName:(NSString *)slotName
+{
+	return self.maps.mapSlotToNode[slotName];
+}
 
 @end
 

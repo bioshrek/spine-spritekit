@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11162A4A1EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A491EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m */; };
+		11162A651EDE77F100F592C7 /* F.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A5C1EDE77F100F592C7 /* F.m */; };
+		11162A661EDE77F100F592C7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 11162A5D1EDE77F100F592C7 /* LICENSE */; };
+		11162A671EDE77F100F592C7 /* NSArray+F.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A5F1EDE77F100F592C7 /* NSArray+F.m */; };
+		11162A681EDE77F100F592C7 /* NSDictionary+F.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A611EDE77F100F592C7 /* NSDictionary+F.m */; };
+		11162A691EDE77F100F592C7 /* NSNumber+F.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A631EDE77F100F592C7 /* NSNumber+F.m */; };
+		11162A6A1EDE77F100F592C7 /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = 11162A641EDE77F100F592C7 /* README.markdown */; };
+		1164071F1ED92E9F00245747 /* SpineRegionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164071E1ED92E9F00245747 /* SpineRegionAttachment.m */; };
+		116407221ED9339C00245747 /* DZSpineAttachmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 116407211ED9339C00245747 /* DZSpineAttachmentManager.m */; };
 		F42C15181814058500A61F6A /* DZSpineSpriteKitAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C15171814058500A61F6A /* DZSpineSpriteKitAnimation.m */; };
 		F42C151B1814059100A61F6A /* DZSpineSpriteKitMaps.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C151A1814059100A61F6A /* DZSpineSpriteKitMaps.m */; };
 		F45213F8180A41D100D8BD26 /* goblinhead4spineboy.png in Resources */ = {isa = PBXBuildFile; fileRef = F45213F7180A41D100D8BD26 /* goblinhead4spineboy.png */; };
@@ -83,6 +92,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11162A481EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpinePreloadAttachmentMetaInfo.h; sourceTree = "<group>"; };
+		11162A491EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpinePreloadAttachmentMetaInfo.m; sourceTree = "<group>"; };
+		11162A5B1EDE77F100F592C7 /* F.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F.h; sourceTree = "<group>"; };
+		11162A5C1EDE77F100F592C7 /* F.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F.m; sourceTree = "<group>"; };
+		11162A5D1EDE77F100F592C7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		11162A5E1EDE77F100F592C7 /* NSArray+F.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+F.h"; sourceTree = "<group>"; };
+		11162A5F1EDE77F100F592C7 /* NSArray+F.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+F.m"; sourceTree = "<group>"; };
+		11162A601EDE77F100F592C7 /* NSDictionary+F.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+F.h"; sourceTree = "<group>"; };
+		11162A611EDE77F100F592C7 /* NSDictionary+F.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+F.m"; sourceTree = "<group>"; };
+		11162A621EDE77F100F592C7 /* NSNumber+F.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+F.h"; sourceTree = "<group>"; };
+		11162A631EDE77F100F592C7 /* NSNumber+F.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+F.m"; sourceTree = "<group>"; };
+		11162A641EDE77F100F592C7 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		1164071D1ED92E9F00245747 /* SpineRegionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineRegionAttachment.h; sourceTree = "<group>"; };
+		1164071E1ED92E9F00245747 /* SpineRegionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpineRegionAttachment.m; sourceTree = "<group>"; };
+		116407201ED9339C00245747 /* DZSpineAttachmentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineAttachmentManager.h; sourceTree = "<group>"; };
+		116407211ED9339C00245747 /* DZSpineAttachmentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpineAttachmentManager.m; sourceTree = "<group>"; };
 		F42C15161814058500A61F6A /* DZSpineSpriteKitAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineSpriteKitAnimation.h; sourceTree = "<group>"; };
 		F42C15171814058500A61F6A /* DZSpineSpriteKitAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpineSpriteKitAnimation.m; sourceTree = "<group>"; };
 		F42C15191814059100A61F6A /* DZSpineSpriteKitMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineSpriteKitMaps.h; sourceTree = "<group>"; };
@@ -218,6 +243,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11162A5A1EDE77F100F592C7 /* Functional.m */ = {
+			isa = PBXGroup;
+			children = (
+				11162A5B1EDE77F100F592C7 /* F.h */,
+				11162A5C1EDE77F100F592C7 /* F.m */,
+				11162A5D1EDE77F100F592C7 /* LICENSE */,
+				11162A5E1EDE77F100F592C7 /* NSArray+F.h */,
+				11162A5F1EDE77F100F592C7 /* NSArray+F.m */,
+				11162A601EDE77F100F592C7 /* NSDictionary+F.h */,
+				11162A611EDE77F100F592C7 /* NSDictionary+F.m */,
+				11162A621EDE77F100F592C7 /* NSNumber+F.h */,
+				11162A631EDE77F100F592C7 /* NSNumber+F.m */,
+				11162A641EDE77F100F592C7 /* README.markdown */,
+			);
+			path = Functional.m;
+			sourceTree = "<group>";
+		};
 		F45213F6180A41D100D8BD26 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +271,7 @@
 		F4F8DA6118080E1100F2C744 = {
 			isa = PBXGroup;
 			children = (
+				11162A5A1EDE77F100F592C7 /* Functional.m */,
 				F45213F6180A41D100D8BD26 /* Images */,
 				F4F8DCE318081A1E00F2C744 /* Resources */,
 				F4F8DC7C1808176700F2C744 /* spine-c */,
@@ -317,6 +360,8 @@
 				F4F8DC5E1808175500F2C744 /* SpineAnimation.m */,
 				F4F8DC5F1808175500F2C744 /* SpineAttachment.h */,
 				F4F8DC601808175500F2C744 /* SpineAttachment.m */,
+				1164071D1ED92E9F00245747 /* SpineRegionAttachment.h */,
+				1164071E1ED92E9F00245747 /* SpineRegionAttachment.m */,
 				F4F8DC611808175500F2C744 /* SpineBone.h */,
 				F4F8DC621808175500F2C744 /* SpineBone.m */,
 				F4F8DC631808175500F2C744 /* SpineGeometry.h */,
@@ -352,6 +397,10 @@
 				F4957453180BFB8B00EA94E0 /* DZSpineSceneTrack.m */,
 				F4957454180BFB8B00EA94E0 /* DZSpineTexturePool.h */,
 				F4957455180BFB8B00EA94E0 /* DZSpineTexturePool.m */,
+				116407201ED9339C00245747 /* DZSpineAttachmentManager.h */,
+				116407211ED9339C00245747 /* DZSpineAttachmentManager.m */,
+				11162A481EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.h */,
+				11162A491EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -534,6 +583,7 @@
 			files = (
 				F45213F8180A41D100D8BD26 /* goblinhead4spineboy.png in Resources */,
 				F4F8DA8E18080E1200F2C744 /* Spaceship.png in Resources */,
+				11162A661EDE77F100F592C7 /* LICENSE in Resources */,
 				F4F8DA9018080E1200F2C744 /* Images.xcassets in Resources */,
 				F4F8DA8618080E1200F2C744 /* Main_iPad.storyboard in Resources */,
 				F4F8DCEB18081A1E00F2C744 /* goblins.json in Resources */,
@@ -565,14 +615,17 @@
 				F4F8DCCF1808176700F2C744 /* AnimationStateData.c in Sources */,
 				F4F8DCE21808176700F2C744 /* SlotData.c in Sources */,
 				F4F8DCD91808176700F2C744 /* extension.c in Sources */,
+				11162A681EDE77F100F592C7 /* NSDictionary+F.m in Sources */,
 				F4F8DCD51808176700F2C744 /* BoneData.c in Sources */,
 				F4F8DC791808175500F2C744 /* SpineSlot.m in Sources */,
 				F4F8DC781808175500F2C744 /* SpineSkeleton.m in Sources */,
 				F4F8DCD31808176700F2C744 /* AttachmentLoader.c in Sources */,
 				F4F8DC701808175500F2C744 /* DZSpineLoader.m in Sources */,
+				11162A691EDE77F100F592C7 /* NSNumber+F.m in Sources */,
 				F4957457180BFB8B00EA94E0 /* DZSpineSceneDescription.m in Sources */,
 				F4F8DC7A1808175500F2C744 /* SpineTimeline.m in Sources */,
 				F42C151B1814059100A61F6A /* DZSpineSpriteKitMaps.m in Sources */,
+				11162A4A1EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m in Sources */,
 				F4F8DC751808175500F2C744 /* SpineBone.m in Sources */,
 				F4957456180BFB8B00EA94E0 /* DZSpineSceneBuilder.m in Sources */,
 				F4F8DC771808175500F2C744 /* SpineSequence.m in Sources */,
@@ -584,6 +637,10 @@
 				F4F8DCDB1808176700F2C744 /* RegionAttachment.c in Sources */,
 				F4F8DC761808175500F2C744 /* SpineGeometry.m in Sources */,
 				F4F8DCD11808176700F2C744 /* AtlasAttachmentLoader.c in Sources */,
+				11162A671EDE77F100F592C7 /* NSArray+F.m in Sources */,
+				11162A6A1EDE77F100F592C7 /* README.markdown in Sources */,
+				1164071F1ED92E9F00245747 /* SpineRegionAttachment.m in Sources */,
+				11162A651EDE77F100F592C7 /* F.m in Sources */,
 				F4F8DCE11808176700F2C744 /* Slot.c in Sources */,
 				F4F8DC731808175500F2C744 /* SpineAnimation.m in Sources */,
 				F4F8DCD71808176700F2C744 /* Event.c in Sources */,
@@ -603,6 +660,7 @@
 				F42C15181814058500A61F6A /* DZSpineSpriteKitAnimation.m in Sources */,
 				F4F8DCDA1808176700F2C744 /* Json.c in Sources */,
 				F4F8DC7B1808175500F2C744 /* DZSpineScene.m in Sources */,
+				116407221ED9339C00245747 /* DZSpineAttachmentManager.m in Sources */,
 				F4F8DA7C18080E1200F2C744 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

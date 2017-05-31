@@ -21,4 +21,6 @@
 + (id) builder;
 + (SpineSkeleton *) loadSkeletonName:(NSString *) name scale:(CGFloat) scale;
 
+- (SKSpriteNode *)findNodeBySlotName:(NSString *)slotName;
+
 @end
