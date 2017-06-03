@@ -100,7 +100,7 @@
     ret = spine_load(&ctx, [name UTF8String], [atlasName UTF8String], scale, [animationName UTF8String]);
     
     if ( ret == 0 ) {
-        if ( animationName == 0 && ctx.skeletonData->animationCount > 0) {
+        if ( animationName == 0 && ctx.skeletonData->animationsCount > 0) {
             animationName = @(ctx.skeletonData->animations[0]->name);
             printf("spine: Selecting the first animation as a default:%s\n", ctx.skeletonData->animations[0]->name);
         }
@@ -118,17 +118,17 @@
         [result setSpineContext:&ctx owns:YES];
         
         // Animations
-        for (int i = 0, n = ctx.skeletonData->animationCount; i < n; i++) {
+        for (int i = 0, n = ctx.skeletonData->animationsCount; i < n; i++) {
             [result addAnimation:[SpineAnimation animationWithCAnimation:ctx.skeletonData->animations[i]]];
         }
         
         // Bones
-        for (int i = 0, n = skeleton->boneCount; i < n; i++) {
+        for (int i = 0, n = skeleton->bonesCount; i < n; i++) {
             [self addBone:skeleton->bones[i] toSpineSkeleton:result];
         }
         
         // Slots
-        for (int i = 0, n = skeleton->slotCount; i < n; i++) {
+        for (int i = 0, n = skeleton->slotsCount; i < n; i++) {
             spSlot* slot = skeleton->drawOrder[i];
             SpineSlot *spineSlot = [SpineSlot slotWithCSlot:slot];
             
