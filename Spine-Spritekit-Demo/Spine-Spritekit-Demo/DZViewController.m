@@ -15,33 +15,32 @@
 
 + (SKScene *) buildSpineboyWithSize:(CGSize) size
 {
-	NSArray *preloadInfo = @[
-							 [DZSpinePreloadAttachmentMetaInfo metaInfoWithSlotName:@"eyes" attachmentName:@"eyes"],
-							 [DZSpinePreloadAttachmentMetaInfo metaInfoWithSlotName:@"eyes" attachmentName:@"eyes-closed"],
-							 ];
+//	NSArray *preloadInfo = @[
+//							 [DZSpinePreloadAttachmentMetaInfo metaInfoWithSlotName:@"eyes" attachmentName:@"eyes"],
+//							 [DZSpinePreloadAttachmentMetaInfo metaInfoWithSlotName:@"eyes" attachmentName:@"eyes-closed"],
+//							 ];
 	
     // 1. Simple Example: An Animation for a Skeleton
     DZSpineScene * scene = [[DZSpineScene alloc] initWithSize:size
                                                  skeletonName:@"spineboy"
                                                 animationName:@"walk"
-                                                        scale:1
-										preloadAttachmentInfo:preloadInfo];
+                                                        scale:0.5];
     // adjust root position
-    scene.rootNode.position = CGPointMake(size.width /2, size.height /3);
+    scene.rootNode.position = CGPointMake(size.width / 3, size.height / 10);
     scene.scaleMode = SKSceneScaleModeAspectFill;
 	
 	// 骨骼初始化，指定slot中的attachment
-	scene.contentFinishLoadingBlock = ^(DZSpineScene *scene) {
-		[scene setAttachment:@"eyes-closed" forSlot:@"eyes"];
-	};
-	
-	// 骨骼运动中，改变slot中的attachment
-	scene.touchEndedBlock = ^(DZSpineScene *scene, NSSet<UITouch *> *touches, UIEvent *event) {
-		// replace attachments
-		[scene setAttachment:@"eyes" forSlot:@"eyes"];
-		
-		[scene playAnimationWithName:@"jump" repeat:NO];
-	};
+//	scene.contentFinishLoadingBlock = ^(DZSpineScene *scene) {
+//		[scene setAttachment:@"eyes-closed" forSlot:@"eyes"];
+//	};
+//	
+//	// 骨骼运动中，改变slot中的attachment
+//	scene.touchEndedBlock = ^(DZSpineScene *scene, NSSet<UITouch *> *touches, UIEvent *event) {
+//		// replace attachments
+//		[scene setAttachment:@"eyes" forSlot:@"eyes"];
+//		
+//		[scene playAnimationWithName:@"jump" repeat:NO];
+//	};
 	
     return scene;
 }

@@ -33,5 +33,6 @@ void spine_logUVS( float *uvs, int atlas_width, int atlas_height);
 void spine_set_handler_createtexture(spine_adapt_createtexture_t handler);
 void spine_set_handler_disposetexture(spine_adapt_disposetexture_t handler);
 CGRect spine_uvs2rect(float *uvs, BOOL *protated);
+float spBone_getWorldRotation (spBone* self);
 
 #endif

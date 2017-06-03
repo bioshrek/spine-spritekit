@@ -105,7 +105,7 @@ static void _spine_adapt_disposeTexture( void * rendobj );
         [parentNode addChild:node];
         if ( child.drawOrderIndex != NSNotFound && bone.drawOrderIndex != NSNotFound) {
             node.zPosition = ((int) child.drawOrderIndex - (int)bone.drawOrderIndex);
-            NSLog(@"%@: zPosition=%2.2f drawOrderIndex:%d", child.name, node.zPosition, child.drawOrderIndex);
+            NSLog(@"%@: zPosition=%2.2f drawOrderIndex:%%@", child.name, node.zPosition, @(child.drawOrderIndex));
         }
         
         mapBoneToNode[child.name] = node;
@@ -212,10 +212,13 @@ static void _spine_adapt_disposeTexture( void * rendobj );
                          maps:(DZSpineSpriteKitMaps *) maps
                          loop:(BOOL) loop
 {
+	SpineBone *rootBone = [skeleton.bones firstObject];
+	NSString *rootBoneName = rootBone ? rootBone.name : @"root";  // default value
+	
     CGPoint center = CGPointMake(0, 0 /*/2 */);
     SKNode *root = [SKNode node];
     root.position = center;
-    root.name = @"root";
+    root.name = rootBoneName;
     if ( debug ) {
         SKSpriteNode *boneAnchor = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(2,2)];
         [root addChild:boneAnchor];
@@ -224,7 +227,7 @@ static void _spine_adapt_disposeTexture( void * rendobj );
     [maps.mapBoneToNode removeAllObjects];
     
     // Bone tree
-    SpineBone *bone = [skeleton boneWithName:@"root"];
+    SpineBone *bone = [skeleton boneWithName:rootBoneName];
     if (bone) {
         // update root position
         center.x += bone.geometry.origin.x;
@@ -232,7 +235,7 @@ static void _spine_adapt_disposeTexture( void * rendobj );
         root.position = center;
         
         // build children nodes
-        maps.mapBoneToNode[@"root"] = root;
+        maps.mapBoneToNode[rootBoneName] = root;
         
         [[self class] buildChildNodesForSpineBone:bone parentNode:root debug:debug map:maps.mapBoneToNode];
     }

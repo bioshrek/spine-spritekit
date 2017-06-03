@@ -48,7 +48,11 @@
      take bone's pose geometry instead of time 0 key frame update so the second animation can start from pose
      */
     [result setGeometry:SpineGeometryMake(bone->data->x, bone->data->y, bone->data->scaleX, bone->data->scaleY, bone->data->rotation)];
-    [result setWorldGeometry:SpineGeometryMake(bone->worldX, bone->worldY, bone->worldScaleX, bone->worldScaleY, bone->worldRotation)];
+    [result setWorldGeometry:SpineGeometryMake(bone->worldX,
+											   bone->worldY,
+											   spBone_getWorldScaleX(bone),
+											   spBone_getWorldScaleY(bone),
+											   spBone_getWorldRotation(bone))];
     [(SpineBone *)result setLength:(CGFloat)bone->data->length];
     return result;
 }

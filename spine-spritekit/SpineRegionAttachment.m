@@ -16,7 +16,7 @@
 	
 	if ( attachment
 		&& attachment->name
-		&& attachment->type == ATTACHMENT_REGION) {
+		&& attachment->type == SP_ATTACHMENT_REGION) {
 		
 		spRegionAttachment *rattach = (spRegionAttachment *) attachment;
 		NSString *name = @(attachment->name);

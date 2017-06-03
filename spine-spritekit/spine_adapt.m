@@ -124,8 +124,9 @@ int spine_dump_animation(struct spinecontext *ctx, const char *animationName)
                    attachment->scaleX, attachment->scaleY, attachment->rotation);
             printf("- bone (%2.2f, %2.2f) scale: (%2.2f, %2.2f) rotation:%2.2f\n",
                    slot->bone->worldX, slot->bone->worldY,
-                   slot->bone->worldScaleX, slot->bone->worldScaleY,
-                   slot->bone->worldRotation);
+                   spBone_getWorldScaleX(slot->bone),
+				   spBone_getWorldScaleY(slot->bone),
+                   spBone_getWorldRotation(slot->bone));
             
             printf("- vertices: (%2.1f, %2.1f), (%2.1f, %2.1f), (%2.1f, %2.1f), (%2.1f, %2.1f)\n" \
                    "- uvs:(%2.2f, %2.2f), (%2.2f, %2.2f), (%2.2f, %2.2f), (%2.2f, %2.2f)\n" \
@@ -205,6 +206,10 @@ CGRect spine_uvs2rect(float *uvs, BOOL *protated)
         *protated = NO;
     }
     return region;
+}
+
+float spBone_getWorldRotation (spBone* self) {
+	return ATAN2(self->c, self->d);
 }
 
 #pragma mark - Spine Resource Loading Test
