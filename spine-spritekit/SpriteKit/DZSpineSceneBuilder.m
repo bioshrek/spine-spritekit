@@ -105,7 +105,7 @@ static void _spine_adapt_disposeTexture( void * rendobj );
         [parentNode addChild:node];
         if ( child.drawOrderIndex != NSNotFound && bone.drawOrderIndex != NSNotFound) {
             node.zPosition = ((int) child.drawOrderIndex - (int)bone.drawOrderIndex);
-            NSLog(@"%@: zPosition=%2.2f drawOrderIndex:%%@", child.name, node.zPosition, @(child.drawOrderIndex));
+            NSLog(@"%@: zPosition=%2.2f drawOrderIndex:%@", child.name, node.zPosition, @(child.drawOrderIndex));
         }
         
         mapBoneToNode[child.name] = node;
