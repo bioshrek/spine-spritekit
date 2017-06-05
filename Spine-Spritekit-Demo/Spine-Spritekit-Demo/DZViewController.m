@@ -23,8 +23,8 @@
     // 1. Simple Example: An Animation for a Skeleton
     DZSpineScene * scene = [[DZSpineScene alloc] initWithSize:size
                                                  skeletonName:@"spineboy"
-                                                animationName:@"walk"
-                                                        scale:0.5];
+                                                animationName:@"idle"
+                                                        scale:1];
     // adjust root position
     scene.rootNode.position = CGPointMake(size.width / 3, size.height / 10);
     scene.scaleMode = SKSceneScaleModeAspectFill;
