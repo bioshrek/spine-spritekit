@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *bonesDictionary;
 @property (nonatomic, readonly) NSMutableArray *manimations;
 @property (nonatomic, readonly) NSMutableDictionary *animationMap;
+@property (nonatomic, strong) NSMutableArray *mutableSkins;
 @property (nonatomic) CGFloat scale;
 @property (nonatomic) struct spinecontext *spineContext;
 @property (nonatomic) BOOL ownsSpineContext;
@@ -98,9 +99,17 @@
     return _animationMap;
 }
 
-- (NSArray<NSString *> *)allAnimationNames
+- (NSMutableArray *)mutableSkins
 {
-	return [self.animationMap allKeys];
+	if (nil == _mutableSkins) {
+		_mutableSkins = [[NSMutableArray alloc] init];
+	}
+	return _mutableSkins;
+}
+
+- (NSArray<SpineSkin *> *)skins
+{
+	return [self.mutableSkins copy];
 }
 
 #pragma mark - API
@@ -136,6 +145,13 @@
 - (SpineAnimation *) animationWithName:(NSString *) name
 {
     return self.animationMap[name];
+}
+
+- (void)addSkin:(SpineSkin *)skin
+{
+	if (skin) {
+		[self.mutableSkins addObject:skin];
+	}
 }
 
 - (void) setSpineContext:(struct spinecontext *)spineContext owns:(BOOL)owns

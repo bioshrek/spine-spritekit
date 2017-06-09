@@ -55,12 +55,14 @@
 - (SKTexture *)toTextTure
 {
 	SKTexture *textureAtlas = [[DZSpineTexturePool sharedPool] textureAtlasWithName:self.atlasName];
-	return [SKTexture textureWithRect:self.rectInAtlas inTexture:textureAtlas];
+	SKTexture *texture = [SKTexture textureWithRect:self.rectInAtlas inTexture:textureAtlas];
+	return texture;
 }
 
 - (void)applyToSpriteNode:(SKSpriteNode *)node
 {
 	node.texture = [self toTextTure];
+	node.size = node.texture.size;
 	node.zRotation = 0;
 	[[self class] applyGeometry:self.geometry toNode:node];
 	node.zRotation += self.regionRotated ? -M_PI/2 : 0;

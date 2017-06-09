@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *mapBoneToNode;
 @property (nonatomic, readonly) NSMutableDictionary *mapSlotToNode;
 @property (nonatomic, readonly) NSMutableDictionary *mapOverrideAttachmentToTexture;
+@property (nonatomic, strong, readonly) NSMutableDictionary<NSString *, NSString *> *mapSlotToAttachment;
 
 + (id) maps;
 @end

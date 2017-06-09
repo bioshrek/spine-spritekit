@@ -137,6 +137,21 @@
             
             spineSlot.bone.drawOrderIndex = i;
         }
+		
+		// Skins
+		spSkin *currentSkin = skeleton->skin;
+		for (int i = 0, n = skeleton->data->skinsCount; i < n; i++) {
+			spSkin *CSkin = skeleton->data->skins[i];
+			
+			SpineSkin *skin = [[SpineSkin alloc] initWithCSkin:CSkin CSkeleton:skeleton];
+			[result addSkin:skin];
+			
+			if (currentSkin) {
+				if (0 == strcmp(CSkin->name, currentSkin->name)) {
+					result.currentSkin = skin;
+				}
+			}
+		}
         
         [self loadTimelinesFromSkeletonName:name skeleton:result scale:scale];
         

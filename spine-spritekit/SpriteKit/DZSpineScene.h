@@ -7,7 +7,6 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "DZSpinePreloadAttachmentMetaInfo.h"
 
 @class DZSpineScene;
 typedef void (^DZSpineSceneTouchBlock)(DZSpineScene *scene, NSSet<UITouch *> * touches, UIEvent *event);
@@ -29,12 +28,6 @@ typedef void (^DZSpineSceneContentFinishLoadingBlock)(DZSpineScene *scene);
 	  animationName:(NSString *)animationName
 			  scale:(CGFloat) scale;
 
-- (instancetype)initWithSize:(CGSize)size
-				skeletonName:(NSString *)skeletonName
-			   animationName:(NSString *)animationName
-					   scale:(CGFloat) scale
-	   preloadAttachmentInfo:(NSArray<DZSpinePreloadAttachmentMetaInfo *> *)preloadAttachmentInfo;
-
 /*
  * Override texture for the attachment specified by 'attachmentName'
  * @textureName: bundle image name that contains texture to be used for the slot as attachment
@@ -48,5 +41,10 @@ typedef void (^DZSpineSceneContentFinishLoadingBlock)(DZSpineScene *scene);
 - (void)setAttachment:(NSString *)attachmentName forSlot:(NSString *)slotName;
 
 - (void)playAnimationWithName:(NSString *)animationName repeat:(BOOL)repeat;
+
+- (void)setSkinName:(NSString *)skinName;
+
+// view's coordination
+- (CGRect)rectForSlot:(NSString *)slotName;
 
 @end

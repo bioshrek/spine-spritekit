@@ -12,6 +12,7 @@
 @synthesize mapBoneToNode = _mapBoneToNode;
 @synthesize mapSlotToNode = _mapSlotToNode;
 @synthesize mapOverrideAttachmentToTexture = _mapOverrideAttachmentToTexture;
+@synthesize mapSlotToAttachment = _mapSlotToAttachment;
 
 #pragma mark - Properties
 - (NSMutableDictionary *) mapBoneToNode
@@ -36,6 +37,14 @@
         _mapOverrideAttachmentToTexture = [NSMutableDictionary dictionary];
     }
     return _mapOverrideAttachmentToTexture;
+}
+
+- (NSMutableDictionary<NSString *,NSString *> *)mapSlotToAttachment
+{
+	if (nil == _mapSlotToAttachment) {
+		_mapSlotToAttachment = [[NSMutableDictionary alloc] init];
+	}
+	return _mapSlotToAttachment;
 }
 
 + (id) maps

@@ -26,4 +26,8 @@
 - (NSArray<NSString *> *)allBoneNames;
 - (SKNode *)findNodeByBoneName:(NSString *)boneName;
 
+- (NSString *)attachmentNameForSlotName:(NSString *)slotName;
+- (void)setAttachmentName:(NSString *)attachmentName forSlotName:(NSString *)slotName;
+- (void)enumerateSlotsWithAttachments:(void (^)(NSString *slotName, NSString *attachmentName, BOOL *stop))block;
+
 @end

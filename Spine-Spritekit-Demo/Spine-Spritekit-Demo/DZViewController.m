@@ -11,36 +11,42 @@
 #import "DZSpineSceneDescription.h"
 #import "DZSpineSceneBuilder.h"
 
+@interface DZViewController ()
+
+@property (nonatomic, weak) DZSpineScene *scene;
+
+@end
+
 @implementation DZViewController
 
 + (SKScene *) buildSpineboyWithSize:(CGSize) size
 {
-//	NSArray *preloadInfo = @[
-//							 [DZSpinePreloadAttachmentMetaInfo metaInfoWithSlotName:@"eyes" attachmentName:@"eyes"],
-//							 [DZSpinePreloadAttachmentMetaInfo metaInfoWithSlotName:@"eyes" attachmentName:@"eyes-closed"],
-//							 ];
-	
     // 1. Simple Example: An Animation for a Skeleton
     DZSpineScene * scene = [[DZSpineScene alloc] initWithSize:size
-                                                 skeletonName:@"spineboy"
-                                                animationName:@"idle"
+                                                 skeletonName:@"goblins"
+                                                animationName:@"walk"
                                                         scale:1];
     // adjust root position
     scene.rootNode.position = CGPointMake(size.width / 3, size.height / 10);
     scene.scaleMode = SKSceneScaleModeAspectFill;
 	
 	// 骨骼初始化，指定slot中的attachment
-//	scene.contentFinishLoadingBlock = ^(DZSpineScene *scene) {
-//		[scene setAttachment:@"eyes-closed" forSlot:@"eyes"];
-//	};
-//	
+	scene.contentFinishLoadingBlock = ^(DZSpineScene *scene) {
+		[scene setSkinName:@"goblin"];
+//		[scene setAttachment:@"eye_surprised" forSlot:@"eye"];
+//		[scene setAttachment:@"eye_surprised" forSlot:@"eye"];
+		
+	};
+
 //	// 骨骼运动中，改变slot中的attachment
-//	scene.touchEndedBlock = ^(DZSpineScene *scene, NSSet<UITouch *> *touches, UIEvent *event) {
-//		// replace attachments
-//		[scene setAttachment:@"eyes" forSlot:@"eyes"];
-//		
-//		[scene playAnimationWithName:@"jump" repeat:NO];
-//	};
+	scene.touchEndedBlock = ^(DZSpineScene *scene, NSSet<UITouch *> *touches, UIEvent *event) {
+		// replace attachments
+//		[scene setAttachment:@"eye_indifferent" forSlot:@"eye"];
+		
+//		[scene playAnimationWithName:@"jump" repeat:YES];
+		
+		[scene setSkinName:@"goblingirl"];
+	};
 	
     return scene;
 }
@@ -204,6 +210,20 @@
     
     // Present the scene.
     [skView presentScene:scene];
+	self.scene = scene;
+	
+//	[skView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapRootView:)]];
+}
+
+- (void)didTapRootView:(UITapGestureRecognizer *)tapGR
+{
+	SKView * skView = (SKView *)self.view;
+	skView.paused = !skView.paused;
+	
+	const CGRect rectOfEye = [self.scene rectForSlot:@"eye"];
+	const CGRect rectOfEyeInWindow = [self.view convertRect:rectOfEye toView:nil];
+	NSLog(@"rect of eye: %@", NSStringFromCGRect(rectOfEyeInWindow));
+	NSLog(@"skview frame: %@", NSStringFromCGRect(skView.frame));
 }
 
 - (BOOL)shouldAutorotate

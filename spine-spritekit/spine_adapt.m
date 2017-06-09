@@ -11,6 +11,7 @@
 #include <spine/extension.h>
 #include "spine_adapt.h"
 #import <SpriteKit/SpriteKit.h>
+#import "SpineRegionAttachment.h"
 
 static spine_adapt_createtexture_t _callback_createTexture = 0;
 static spine_adapt_disposetexture_t _callback_disposeTexture = 0;
@@ -210,6 +211,29 @@ CGRect spine_uvs2rect(float *uvs, BOOL *protated)
 
 float spBone_getWorldRotation (spBone* self) {
 	return ATAN2(self->c, self->d);
+}
+
+NSDictionary<NSString *, NSDictionary<NSString *, SpineRegionAttachment *> *> * spSkin_mapSlotToAttachmentMap(const spSkin* self, spSkeleton* skeleton) {
+	NSMutableDictionary *mapSlotToAttachmentMap = [[NSMutableDictionary alloc] init];
+	const _Entry* entry = SUB_CAST(_spSkin, self)->entries;
+	while (entry) {
+		spSlot *slot = skeleton->slots[entry->slotIndex];
+		NSString *slotName = @(slot->data->name);
+		NSMutableDictionary<NSString *, SpineRegionAttachment *> *mapNameToAttachment = mapSlotToAttachmentMap[slotName];
+		if (nil == mapNameToAttachment) {
+			mapNameToAttachment = [[NSMutableDictionary alloc] init];
+			mapSlotToAttachmentMap[slotName] = mapNameToAttachment;
+		}
+		
+		spAttachment *cAttachment = entry->attachment;
+		SpineRegionAttachment *attachment = [SpineRegionAttachment attachmentWithCAttachment:cAttachment];
+		if (attachment) {
+			mapNameToAttachment[@(entry->name)] = attachment;
+		}
+		
+		entry = entry->next;
+	}
+	return mapSlotToAttachmentMap;
 }
 
 #pragma mark - Spine Resource Loading Test

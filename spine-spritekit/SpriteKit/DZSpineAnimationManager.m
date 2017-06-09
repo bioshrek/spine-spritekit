@@ -46,7 +46,7 @@
 		[[DZSpineBoneAnimationActionTransformer alloc] initWithSkeleton:skeleton builder:builder];
 	
 	NSMutableDictionary *mapper = [[NSMutableDictionary alloc] init];
-	NSArray *animationNameList = [skeleton allAnimationNames];
+	NSArray *animationNameList = [skeleton animationNames];
 	[animationNameList enumerateObjectsUsingBlock:
 	 ^(NSString * _Nonnull animationName, NSUInteger idx, BOOL * _Nonnull stop) {
 		 SpineAnimation *animation = [skeleton animationWithName:animationName];
@@ -70,7 +70,7 @@
 	[[DZSpineSlotAnimationActionTransformer alloc] initWithSkeleton:skeleton builder:builder];
 	
 	NSMutableDictionary *mapper = [[NSMutableDictionary alloc] init];
-	NSArray *animationNameList = [skeleton allAnimationNames];
+	NSArray *animationNameList = [skeleton animationNames];
 	[animationNameList enumerateObjectsUsingBlock:
 	 ^(NSString * _Nonnull animationName, NSUInteger idx, BOOL * _Nonnull stop) {
 		 SpineAnimation *animation = [skeleton animationWithName:animationName];

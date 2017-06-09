@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11162A4A1EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A491EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m */; };
 		11162A651EDE77F100F592C7 /* F.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A5C1EDE77F100F592C7 /* F.m */; };
 		11162A661EDE77F100F592C7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 11162A5D1EDE77F100F592C7 /* LICENSE */; };
 		11162A671EDE77F100F592C7 /* NSArray+F.m in Sources */ = {isa = PBXBuildFile; fileRef = 11162A5F1EDE77F100F592C7 /* NSArray+F.m */; };
@@ -49,20 +48,15 @@
 		1116AD711EE273CD00138DFB /* TransformConstraint.c in Sources */ = {isa = PBXBuildFile; fileRef = 1116AD511EE273CD00138DFB /* TransformConstraint.c */; };
 		1116AD721EE273CD00138DFB /* TransformConstraintData.c in Sources */ = {isa = PBXBuildFile; fileRef = 1116AD521EE273CD00138DFB /* TransformConstraintData.c */; };
 		1116AD731EE273CD00138DFB /* VertexAttachment.c in Sources */ = {isa = PBXBuildFile; fileRef = 1116AD531EE273CD00138DFB /* VertexAttachment.c */; };
-		1116AD811EE2740B00138DFB /* goblins-mesh.json in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD751EE2740B00138DFB /* goblins-mesh.json */; };
-		1116AD821EE2740B00138DFB /* goblins.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD761EE2740B00138DFB /* goblins.atlas */; };
-		1116AD831EE2740B00138DFB /* goblins.png in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD771EE2740B00138DFB /* goblins.png */; };
-		1116AD841EE2740B00138DFB /* raptor.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD781EE2740B00138DFB /* raptor.atlas */; };
-		1116AD851EE2740B00138DFB /* raptor.json in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD791EE2740B00138DFB /* raptor.json */; };
-		1116AD861EE2740B00138DFB /* raptor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD7A1EE2740B00138DFB /* raptor.png */; };
 		1116AD871EE2740B00138DFB /* spineboy.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD7B1EE2740B00138DFB /* spineboy.atlas */; };
 		1116AD881EE2740B00138DFB /* spineboy.json in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD7C1EE2740B00138DFB /* spineboy.json */; };
 		1116AD891EE2740B00138DFB /* spineboy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD7D1EE2740B00138DFB /* spineboy.png */; };
-		1116AD8A1EE2740B00138DFB /* tank.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD7E1EE2740B00138DFB /* tank.atlas */; };
-		1116AD8B1EE2740B00138DFB /* tank.json in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD7F1EE2740B00138DFB /* tank.json */; };
-		1116AD8C1EE2740B00138DFB /* tank.png in Resources */ = {isa = PBXBuildFile; fileRef = 1116AD801EE2740B00138DFB /* tank.png */; };
 		1164071F1ED92E9F00245747 /* SpineRegionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164071E1ED92E9F00245747 /* SpineRegionAttachment.m */; };
-		116407221ED9339C00245747 /* DZSpineAttachmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 116407211ED9339C00245747 /* DZSpineAttachmentManager.m */; };
+		11736EE71EEA4EF600D01CAD /* goblins.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 11736EE41EEA4EF600D01CAD /* goblins.atlas */; };
+		11736EE81EEA4EF600D01CAD /* goblins.json in Resources */ = {isa = PBXBuildFile; fileRef = 11736EE51EEA4EF600D01CAD /* goblins.json */; };
+		11736EE91EEA4EF600D01CAD /* goblins.png in Resources */ = {isa = PBXBuildFile; fileRef = 11736EE61EEA4EF600D01CAD /* goblins.png */; };
+		11736EEC1EEA53E400D01CAD /* SpineSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 11736EEB1EEA53E400D01CAD /* SpineSkin.m */; };
+		11736EEF1EEA951100D01CAD /* DZSpineSkinManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11736EEE1EEA951100D01CAD /* DZSpineSkinManager.m */; };
 		F42C15181814058500A61F6A /* DZSpineSpriteKitAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C15171814058500A61F6A /* DZSpineSpriteKitAnimation.m */; };
 		F42C151B1814059100A61F6A /* DZSpineSpriteKitMaps.m in Sources */ = {isa = PBXBuildFile; fileRef = F42C151A1814059100A61F6A /* DZSpineSpriteKitMaps.m */; };
 		F45213F8180A41D100D8BD26 /* goblinhead4spineboy.png in Resources */ = {isa = PBXBuildFile; fileRef = F45213F7180A41D100D8BD26 /* goblinhead4spineboy.png */; };
@@ -111,8 +105,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		11162A481EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpinePreloadAttachmentMetaInfo.h; sourceTree = "<group>"; };
-		11162A491EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpinePreloadAttachmentMetaInfo.m; sourceTree = "<group>"; };
 		11162A5B1EDE77F100F592C7 /* F.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F.h; sourceTree = "<group>"; };
 		11162A5C1EDE77F100F592C7 /* F.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = F.m; sourceTree = "<group>"; };
 		11162A5D1EDE77F100F592C7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -195,22 +187,18 @@
 		1116AD511EE273CD00138DFB /* TransformConstraint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TransformConstraint.c; sourceTree = "<group>"; };
 		1116AD521EE273CD00138DFB /* TransformConstraintData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TransformConstraintData.c; sourceTree = "<group>"; };
 		1116AD531EE273CD00138DFB /* VertexAttachment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = VertexAttachment.c; sourceTree = "<group>"; };
-		1116AD751EE2740B00138DFB /* goblins-mesh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "goblins-mesh.json"; sourceTree = "<group>"; };
-		1116AD761EE2740B00138DFB /* goblins.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = goblins.atlas; sourceTree = "<group>"; };
-		1116AD771EE2740B00138DFB /* goblins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goblins.png; sourceTree = "<group>"; };
-		1116AD781EE2740B00138DFB /* raptor.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = raptor.atlas; sourceTree = "<group>"; };
-		1116AD791EE2740B00138DFB /* raptor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = raptor.json; sourceTree = "<group>"; };
-		1116AD7A1EE2740B00138DFB /* raptor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raptor.png; sourceTree = "<group>"; };
 		1116AD7B1EE2740B00138DFB /* spineboy.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = spineboy.atlas; sourceTree = "<group>"; };
 		1116AD7C1EE2740B00138DFB /* spineboy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spineboy.json; sourceTree = "<group>"; };
 		1116AD7D1EE2740B00138DFB /* spineboy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spineboy.png; sourceTree = "<group>"; };
-		1116AD7E1EE2740B00138DFB /* tank.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tank.atlas; sourceTree = "<group>"; };
-		1116AD7F1EE2740B00138DFB /* tank.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tank.json; sourceTree = "<group>"; };
-		1116AD801EE2740B00138DFB /* tank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tank.png; sourceTree = "<group>"; };
 		1164071D1ED92E9F00245747 /* SpineRegionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineRegionAttachment.h; sourceTree = "<group>"; };
 		1164071E1ED92E9F00245747 /* SpineRegionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpineRegionAttachment.m; sourceTree = "<group>"; };
-		116407201ED9339C00245747 /* DZSpineAttachmentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineAttachmentManager.h; sourceTree = "<group>"; };
-		116407211ED9339C00245747 /* DZSpineAttachmentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpineAttachmentManager.m; sourceTree = "<group>"; };
+		11736EE41EEA4EF600D01CAD /* goblins.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = goblins.atlas; path = ../../examples/goblins/export/goblins.atlas; sourceTree = "<group>"; };
+		11736EE51EEA4EF600D01CAD /* goblins.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = goblins.json; path = ../../examples/goblins/export/goblins.json; sourceTree = "<group>"; };
+		11736EE61EEA4EF600D01CAD /* goblins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goblins.png; path = ../../examples/goblins/export/goblins.png; sourceTree = "<group>"; };
+		11736EEA1EEA53E400D01CAD /* SpineSkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpineSkin.h; sourceTree = "<group>"; };
+		11736EEB1EEA53E400D01CAD /* SpineSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpineSkin.m; sourceTree = "<group>"; };
+		11736EED1EEA951100D01CAD /* DZSpineSkinManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineSkinManager.h; sourceTree = "<group>"; };
+		11736EEE1EEA951100D01CAD /* DZSpineSkinManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpineSkinManager.m; sourceTree = "<group>"; };
 		F42C15161814058500A61F6A /* DZSpineSpriteKitAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineSpriteKitAnimation.h; sourceTree = "<group>"; };
 		F42C15171814058500A61F6A /* DZSpineSpriteKitAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZSpineSpriteKitAnimation.m; sourceTree = "<group>"; };
 		F42C15191814059100A61F6A /* DZSpineSpriteKitMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZSpineSpriteKitMaps.h; sourceTree = "<group>"; };
@@ -421,18 +409,12 @@
 		1116AD741EE2740B00138DFB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1116AD751EE2740B00138DFB /* goblins-mesh.json */,
-				1116AD761EE2740B00138DFB /* goblins.atlas */,
-				1116AD771EE2740B00138DFB /* goblins.png */,
-				1116AD781EE2740B00138DFB /* raptor.atlas */,
-				1116AD791EE2740B00138DFB /* raptor.json */,
-				1116AD7A1EE2740B00138DFB /* raptor.png */,
+				11736EE41EEA4EF600D01CAD /* goblins.atlas */,
+				11736EE51EEA4EF600D01CAD /* goblins.json */,
+				11736EE61EEA4EF600D01CAD /* goblins.png */,
 				1116AD7B1EE2740B00138DFB /* spineboy.atlas */,
 				1116AD7C1EE2740B00138DFB /* spineboy.json */,
 				1116AD7D1EE2740B00138DFB /* spineboy.png */,
-				1116AD7E1EE2740B00138DFB /* tank.atlas */,
-				1116AD7F1EE2740B00138DFB /* tank.json */,
-				1116AD801EE2740B00138DFB /* tank.png */,
 			);
 			name = Resources;
 			path = "../spine-runtimes/spine-cocos2d-objc/Resources";
@@ -552,6 +534,8 @@
 				F4F8DC6A1808175500F2C744 /* SpineSlot.m */,
 				F4F8DC6B1808175500F2C744 /* SpineTimeline.h */,
 				F4F8DC6C1808175500F2C744 /* SpineTimeline.m */,
+				11736EEA1EEA53E400D01CAD /* SpineSkin.h */,
+				11736EEB1EEA53E400D01CAD /* SpineSkin.m */,
 				F4F8DC6D1808175500F2C744 /* SpriteKit */,
 			);
 			name = "spine-spritekit";
@@ -575,16 +559,14 @@
 				F4957453180BFB8B00EA94E0 /* DZSpineSceneTrack.m */,
 				F4957454180BFB8B00EA94E0 /* DZSpineTexturePool.h */,
 				F4957455180BFB8B00EA94E0 /* DZSpineTexturePool.m */,
-				116407201ED9339C00245747 /* DZSpineAttachmentManager.h */,
-				116407211ED9339C00245747 /* DZSpineAttachmentManager.m */,
-				11162A481EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.h */,
-				11162A491EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m */,
 				11162A6B1EDECE4100F592C7 /* DZSpineBoneAnimationActionTransformer.h */,
 				11162A6C1EDECE4100F592C7 /* DZSpineBoneAnimationActionTransformer.m */,
 				11162A6E1EDED36B00F592C7 /* DZSpineSlotAnimationActionTransformer.h */,
 				11162A6F1EDED36B00F592C7 /* DZSpineSlotAnimationActionTransformer.m */,
 				11162A711EDED5CF00F592C7 /* DZSpineAnimationManager.h */,
 				11162A721EDED5CF00F592C7 /* DZSpineAnimationManager.m */,
+				11736EED1EEA951100D01CAD /* DZSpineSkinManager.h */,
+				11736EEE1EEA951100D01CAD /* DZSpineSkinManager.m */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -666,10 +648,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11736EE71EEA4EF600D01CAD /* goblins.atlas in Resources */,
+				11736EE91EEA4EF600D01CAD /* goblins.png in Resources */,
 				F45213F8180A41D100D8BD26 /* goblinhead4spineboy.png in Resources */,
-				1116AD821EE2740B00138DFB /* goblins.atlas in Resources */,
-				1116AD831EE2740B00138DFB /* goblins.png in Resources */,
-				1116AD811EE2740B00138DFB /* goblins-mesh.json in Resources */,
+				11736EE81EEA4EF600D01CAD /* goblins.json in Resources */,
 				F4F8DA8E18080E1200F2C744 /* Spaceship.png in Resources */,
 				11162A661EDE77F100F592C7 /* LICENSE in Resources */,
 				F4F8DA9018080E1200F2C744 /* Images.xcassets in Resources */,
@@ -678,13 +660,7 @@
 				1116AD871EE2740B00138DFB /* spineboy.atlas in Resources */,
 				F4F8DA8318080E1200F2C744 /* Main_iPhone.storyboard in Resources */,
 				F4F8DA7A18080E1100F2C744 /* InfoPlist.strings in Resources */,
-				1116AD8C1EE2740B00138DFB /* tank.png in Resources */,
 				1116AD881EE2740B00138DFB /* spineboy.json in Resources */,
-				1116AD861EE2740B00138DFB /* raptor.png in Resources */,
-				1116AD8A1EE2740B00138DFB /* tank.atlas in Resources */,
-				1116AD841EE2740B00138DFB /* raptor.atlas in Resources */,
-				1116AD851EE2740B00138DFB /* raptor.json in Resources */,
-				1116AD8B1EE2740B00138DFB /* tank.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,7 +704,6 @@
 				1116AD5B1EE273CD00138DFB /* Bone.c in Sources */,
 				1116AD651EE273CD00138DFB /* PathAttachment.c in Sources */,
 				1116AD5A1EE273CD00138DFB /* AttachmentLoader.c in Sources */,
-				11162A4A1EDE762C00F592C7 /* DZSpinePreloadAttachmentMetaInfo.m in Sources */,
 				F4F8DC751808175500F2C744 /* SpineBone.m in Sources */,
 				F4957456180BFB8B00EA94E0 /* DZSpineSceneBuilder.m in Sources */,
 				1116AD671EE273CD00138DFB /* PathConstraintData.c in Sources */,
@@ -755,15 +730,16 @@
 				F4F8DC721808175500F2C744 /* spine_adapt.m in Sources */,
 				F4957459180BFB8B00EA94E0 /* DZSpineTexturePool.m in Sources */,
 				1116AD611EE273CD00138DFB /* IkConstraint.c in Sources */,
+				11736EEF1EEA951100D01CAD /* DZSpineSkinManager.m in Sources */,
 				1116AD5D1EE273CD00138DFB /* BoundingBoxAttachment.c in Sources */,
 				1116AD591EE273CD00138DFB /* Attachment.c in Sources */,
 				F4957458180BFB8B00EA94E0 /* DZSpineSceneTrack.m in Sources */,
 				1116AD5C1EE273CD00138DFB /* BoneData.c in Sources */,
 				F4F8DA8918080E1200F2C744 /* DZViewController.m in Sources */,
 				F42C15181814058500A61F6A /* DZSpineSpriteKitAnimation.m in Sources */,
+				11736EEC1EEA53E400D01CAD /* SpineSkin.m in Sources */,
 				1116AD541EE273CD00138DFB /* Animation.c in Sources */,
 				F4F8DC7B1808175500F2C744 /* DZSpineScene.m in Sources */,
-				116407221ED9339C00245747 /* DZSpineAttachmentManager.m in Sources */,
 				1116AD6C1EE273CD00138DFB /* SkeletonData.c in Sources */,
 				F4F8DA7C18080E1200F2C744 /* main.m in Sources */,
 			);

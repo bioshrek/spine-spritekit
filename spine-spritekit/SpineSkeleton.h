@@ -11,7 +11,7 @@
 #import "SpineSlot.h"
 #import "SpineAnimation.h"
 #import "SpineRegionAttachment.h"
-
+#import "SpineSkin.h"
 
 @interface SpineSkeleton : NSObject
 @property (nonatomic, strong) NSString *name;
@@ -19,6 +19,8 @@
 @property (nonatomic, copy, readonly) NSArray *slots;
 @property (nonatomic, copy, readonly) NSArray *animations;
 @property (nonatomic, copy, readonly) NSArray *animationNames;
+@property (nonatomic, strong) SpineSkin *currentSkin;
+@property (nonatomic, copy, readonly) NSArray<SpineSkin *> *skins;
 @property (nonatomic, readonly) CGFloat scale;
 @property (nonatomic, readonly) struct spinecontext *spineContext;
 @property (nonatomic, readonly) BOOL ownsSpineContext;
@@ -29,11 +31,10 @@
 - (SpineBone *) boneWithName:(NSString *) name;
 - (void) addAnimation:(SpineAnimation *) animation;
 - (SpineAnimation *) animationWithName:(NSString *) name;
+- (void)addSkin:(SpineSkin *)skin;
 
 + (id) skeletonWithName:(NSString *) name atlasName:(NSString *) atlasName scale:(CGFloat) scale;
 
 - (SpineRegionAttachment *)findAttachmentWithName:(NSString *)attachmentName inSlotName:(NSString *)slotName;
-
-- (NSArray<NSString *> *)allAnimationNames;
 
 @end

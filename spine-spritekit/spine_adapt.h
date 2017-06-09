@@ -14,6 +14,8 @@
 #include <spine/extension.h>
 #include <CoreGraphics/CGGeometry.h>
 
+@class SpineRegionAttachment;
+
 typedef void *(*spine_adapt_createtexture_t)(const char* path, int *pwidth, int *pheight);
 typedef void (*spine_adapt_disposetexture_t)(void *rendobj);
 
@@ -34,5 +36,7 @@ void spine_set_handler_createtexture(spine_adapt_createtexture_t handler);
 void spine_set_handler_disposetexture(spine_adapt_disposetexture_t handler);
 CGRect spine_uvs2rect(float *uvs, BOOL *protated);
 float spBone_getWorldRotation (spBone* self);
+
+NSDictionary<NSString *, NSDictionary<NSString *, SpineRegionAttachment *> *> * spSkin_mapSlotToAttachmentMap(const spSkin* self, spSkeleton* skeleton);
 
 #endif

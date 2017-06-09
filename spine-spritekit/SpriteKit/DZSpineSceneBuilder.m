@@ -249,6 +249,7 @@ static void _spine_adapt_disposeTexture( void * rendobj );
         const char *boneName = slot->bone->data->name;
         if ( boneName ) {
             node = maps.mapBoneToNode[@(boneName)];
+			maps.mapSlotToAttachment[@(slot->data->name)] = slot->data->attachmentName ? @(slot->data->attachmentName) : @"";
             if ( slot->attachment && slot->attachment->type == SP_ATTACHMENT_REGION ) {
                 BOOL rotated = NO;
                 SKTexture *texture = [self textureForAttachment:slot->attachment rotated:&rotated map:maps.mapOverrideAttachmentToTexture];
@@ -266,6 +267,7 @@ static void _spine_adapt_disposeTexture( void * rendobj );
             } else {
                 // Empty node for later use
                 sprite = [SKSpriteNode spriteNodeWithColor:nil size:CGSizeMake(0, 0)];
+				
                 
             }
             // Texture Scaling at Customg Loading
@@ -348,6 +350,21 @@ static void _spine_adapt_disposeTexture( void * rendobj );
 - (SKNode *)findNodeByBoneName:(NSString *)boneName
 {
 	return self.maps.mapBoneToNode[boneName];
+}
+
+- (NSString *)attachmentNameForSlotName:(NSString *)slotName
+{
+	return self.maps.mapSlotToAttachment[slotName];
+}
+
+- (void)setAttachmentName:(NSString *)attachmentName forSlotName:(NSString *)slotName
+{
+	self.maps.mapSlotToAttachment[slotName] = attachmentName;
+}
+
+- (void)enumerateSlotsWithAttachments:(void (^)(NSString *slotName, NSString *attachmentName, BOOL *stop))block
+{
+	[self.maps.mapSlotToAttachment enumerateKeysAndObjectsUsingBlock:block];
 }
 
 @end
