@@ -195,26 +195,6 @@
     return skeleton;
 }
 
-- (SpineRegionAttachment *)findAttachmentWithName:(NSString *)attachmentName
-									   inSlotName:(NSString *)slotName
-{
-	if (0 == [attachmentName length] ||
-		0 == [slotName length]) {
-		return nil;
-	}
-	
-	const char *cStringSlotName = [slotName cStringUsingEncoding:NSUTF8StringEncoding];
-	const char *cStringAttachmentName = [attachmentName cStringUsingEncoding:NSUTF8StringEncoding];
-	spAttachment *attachment = spSkeleton_getAttachmentForSlotName(self.spineContext->skeleton,
-																   cStringSlotName,
-																   cStringAttachmentName);
-	if (NULL == attachment) {
-		return nil;
-	} else {
-		return [SpineRegionAttachment attachmentWithCAttachment:attachment];
-	}
-}
-
 - (void) dealloc
 {
     [self unsetSpineContext];

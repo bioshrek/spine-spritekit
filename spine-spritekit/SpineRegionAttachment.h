@@ -19,6 +19,7 @@
 @property (nonatomic, assign, readonly) CGRect rectInAtlas;
 @property (nonatomic, assign, readonly) BOOL regionRotated;
 @property (nonatomic, assign, readonly) SpineGeometry geometry;
+@property (nonatomic, assign) CGFloat scaleSkeleton;
 
 + (instancetype)attachmentWithCAttachment:(spAttachment *)attachment;
 

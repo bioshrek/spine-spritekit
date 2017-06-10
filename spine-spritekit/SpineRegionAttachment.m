@@ -61,20 +61,20 @@
 
 - (void)applyToSpriteNode:(SKSpriteNode *)node
 {
-	node.texture = [self toTextTure];
-	node.size = node.texture.size;
-	node.zRotation = 0;
-	[[self class] applyGeometry:self.geometry toNode:node];
-	node.zRotation += self.regionRotated ? -M_PI/2 : 0;
+	SKTexture *texture = [self toTextTure];
+	node.texture = texture;
+	node.size = texture.size;
+	node.position = self.geometry.origin;
+	node.zRotation = [self calculateZRotation];
+	node.xScale = self.geometry.scale.x * self.scaleSkeleton;
+	node.yScale = self.geometry.scale.y * self.scaleSkeleton;
 }
 
-+ (void)applyGeometry:(SpineGeometry)geometry toNode:(SKNode *)node
+- (CGFloat)calculateZRotation
 {
-	node.position = geometry.origin;
-	node.xScale = geometry.scale.x;
-	node.yScale = geometry.scale.y;
-	CGFloat radians = (CGFloat)(geometry.rotation * M_PI / 180);
-	node.zRotation = radians;
+	CGFloat radians = (CGFloat)(self.geometry.rotation * M_PI / 180);
+	radians += self.regionRotated ? -M_PI_2 : 0;
+	return radians;
 }
 
 @end

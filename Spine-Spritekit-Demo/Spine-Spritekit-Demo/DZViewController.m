@@ -23,16 +23,16 @@
 {
     // 1. Simple Example: An Animation for a Skeleton
     DZSpineScene * scene = [[DZSpineScene alloc] initWithSize:size
-                                                 skeletonName:@"goblins"
-                                                animationName:@"walk"
+                                                 skeletonName:@"spineboy"
+                                                animationName:@"idle"
                                                         scale:1];
     // adjust root position
     scene.rootNode.position = CGPointMake(size.width / 3, size.height / 10);
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    scene.scaleMode = SKSceneScaleModeAspectFit;
 	
 	// 骨骼初始化，指定slot中的attachment
 	scene.contentFinishLoadingBlock = ^(DZSpineScene *scene) {
-		[scene setSkinName:@"goblin"];
+//		[scene setSkinName:@"goblin"];
 //		[scene setAttachment:@"eye_surprised" forSlot:@"eye"];
 //		[scene setAttachment:@"eye_surprised" forSlot:@"eye"];
 		
@@ -45,7 +45,7 @@
 		
 //		[scene playAnimationWithName:@"jump" repeat:YES];
 		
-		[scene setSkinName:@"goblingirl"];
+//		[scene setSkinName:@"goblingirl"];
 	};
 	
     return scene;
@@ -206,11 +206,11 @@
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
 
-    SKScene *scene = [[self class] buildSpineboyWithSize:skView.bounds.size];
+    SKScene *scene = [[self class] buildSpineboyWithSize:CGSizeMake(500, 800)];
     
     // Present the scene.
     [skView presentScene:scene];
-	self.scene = scene;
+//	self.scene = scene;
 	
 //	[skView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapRootView:)]];
 }
@@ -254,10 +254,10 @@
     switch (sender.selectedSegmentIndex) {
         case 0:
         {
-            SKScene *scene = [[self class] buildSpineboyWithSize:skView.bounds.size];
-            
-            // Present the scene.
-            [skView presentScene:scene];
+//            SKScene *scene = [[self class] buildSpineboyWithSize:skView.bounds.size];
+//            
+//            // Present the scene.
+//            [skView presentScene:scene];
         }
             break;
             

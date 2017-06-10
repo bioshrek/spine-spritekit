@@ -119,6 +119,7 @@
 	if (nil == attachment) {
 		return;
 	}
+	attachment.scaleSkeleton = self.scaleSkeleton;
 	
 	SKSpriteNode *node = [self.builder findNodeBySlotName:slotName];
 	if (nil == node) {
