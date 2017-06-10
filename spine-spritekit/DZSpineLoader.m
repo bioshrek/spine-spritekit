@@ -116,6 +116,9 @@
         
         result = [[SpineSkeleton alloc] init];
         [result setSpineContext:&ctx owns:YES];
+		
+		// size
+		result.size = CGSizeMake(skeleton->data->width, skeleton->data->height);
         
         // Animations
         for (int i = 0, n = ctx.skeletonData->animationsCount; i < n; i++) {

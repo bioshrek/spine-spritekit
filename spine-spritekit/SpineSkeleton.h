@@ -24,6 +24,8 @@
 @property (nonatomic, readonly) struct spinecontext *spineContext;
 @property (nonatomic, readonly) BOOL ownsSpineContext;
 
+@property (nonatomic, assign) CGSize size;
+
 - (void) setSpineContext:(struct spinecontext *)spineContext owns:(BOOL) owns;
 - (void) addSlot:(SpineSlot *) slot;
 - (void) addBone:(SpineBone *) bone;

@@ -23,16 +23,16 @@
 {
     // 1. Simple Example: An Animation for a Skeleton
     DZSpineScene * scene = [[DZSpineScene alloc] initWithSize:size
-                                                 skeletonName:@"spineboy"
-                                                animationName:@"idle"
+                                                 skeletonName:@"goblins"
+                                                animationName:@"walk"
                                                         scale:1];
     // adjust root position
-    scene.rootNode.position = CGPointMake(size.width / 3, size.height / 10);
+    scene.rootNode.position = CGPointMake(size.width / 2, size.height / 10);
     scene.scaleMode = SKSceneScaleModeAspectFit;
 	
 	// 骨骼初始化，指定slot中的attachment
 	scene.contentFinishLoadingBlock = ^(DZSpineScene *scene) {
-//		[scene setSkinName:@"goblin"];
+		[scene setSkinName:@"goblin"];
 //		[scene setAttachment:@"eye_surprised" forSlot:@"eye"];
 //		[scene setAttachment:@"eye_surprised" forSlot:@"eye"];
 		
@@ -206,7 +206,7 @@
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
 
-    SKScene *scene = [[self class] buildSpineboyWithSize:CGSizeMake(500, 800)];
+    SKScene *scene = [[self class] buildSpineboyWithSize:self.view.bounds.size];
     
     // Present the scene.
     [skView presentScene:scene];

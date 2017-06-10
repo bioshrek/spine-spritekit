@@ -94,6 +94,7 @@
     if ( self.skeletonName ) {
         SpineSkeleton *skeleton = [DZSpineSceneBuilder loadSkeletonName:self.skeletonName scale:self.scaleSkeleton];
         if ( skeleton ) {
+			self.size = skeleton.size;
             [self.rootNode addChild:[self.builder nodeWithSkeleton:skeleton animationName:self.animationName loop:YES]];
 			[self createAnimationManagerWithSkeleton:skeleton];
 			self.skinManager = [[DZSpineSkinManager alloc] initWithSkins:skeleton.skins currentSkin:skeleton.currentSkin];
